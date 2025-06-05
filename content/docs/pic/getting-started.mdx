@@ -1,0 +1,57 @@
+---
+title: 快速开始
+description: 快速开始
+---
+
+您可以使用多种方式部署 PicImpact
+
+> v2 版本与 v1 版本不兼容，如果您跨版本升级，您需要重新配置数据库。[迁移脚本](https://github.com/besscroft/PicImpact/tree/main/scripts/migrate)
+
+## Vercel
+
+<Callout>我们推荐当新版本发布时您再进行版本更新！</Callout>
+
+你可以点击下面的按钮来一键部署到 Vercel，**然后将 `Build Command` 设置为 `pnpm run build:vercel`**，也可以 Fork 项目后手动部署到任何支持的平台。
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbesscroft%2FPicImpact&env=DATABASE_URL,AUTH_SECRET"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+
+| Key          | 备注                                                                                           |
+|--------------|----------------------------------------------------------------------------------------------|
+| DATABASE_URL | Postgre 数据库 url，`postgresql://[用户名]:[密码]@[地址和端口]/[数据库]`，如：`postgresql://postgres:666666@aws-0-ap-northeast-1.pooler.supabase.com:6543/postgres` |
+| AUTH_SECRET  | 权限机密，你可以执行 npx auth secret 生成一个，反正是随机的字符串就行                                                  |
+
+<Callout title="非常重要" type="error">
+  默认账号：`admin@qq.com`，默认密码：`666666`，**登录后请先去设置里面修改密码！**
+</Callout>
+
+<Callout title="注意事项">
+请根据您的数据库供应商来填写正确的数据库 `connect url`。
+
+如果是 Vercel 部署，直接将 `Build Command` 设置为 `pnpm run build:vercel` 即可。
+
+如果您自行使用 node 部署，请使用 `pnpm run build:node` 命令来构建。
+</Callout>
+
+## Docker
+
+你可以使用 Docker 来部署 PicImpact，当然 containerd 和 k8s 也是可以的。
+
+```shell
+docker run -d --name picimpact \
+  -p 3000:3000 \
+  -e DATABASE_URL="postgresql://[用户名]:[密码]@[地址和端口]/[数据库]" \
+  -e AUTH_SECRET="自己运行npx auth secret或一串随机的字符串都行" \
+  besscroft/picimpact:latest
+```
+
+<Callout title="值得注意" type="warn">
+如果您使用 `Docker Compose`，存在无法访问数据库的问题，请尝试将环境变量的双引号去掉。即 `DATABASE_URL="连接信息"` -> `DATABASE_URL=连接信息`。
+</Callout>
+
+## 手动构建
+
+<Callout>您也可以手动构建，然后运行在自己服务器的 Node 上。</Callout>
+
+```shell
+pnpm run build:node
+```

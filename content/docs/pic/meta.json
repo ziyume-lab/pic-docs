@@ -1,0 +1,27 @@
+{
+  "title": "PicImpact",
+  "description": "自部署的摄影作品网站",
+  "icon": "Building2",
+  "root": true,
+  "pages": [
+    "---开始---",
+    "index",
+    "getting-started",
+    "---特性---",
+    "basic/admin",
+    "basic/upload",
+    "basic/list",
+    "basic/album",
+    "basic/settings",
+    "basic/storages",
+    "basic/authenticator",
+    "---开发与贡献指南---",
+    "dev/dev",
+    "dev/pr",
+    "dev/database",
+    "---其他---",
+    "other/license",
+    "other/team",
+    "other/about"
+  ]
+}
