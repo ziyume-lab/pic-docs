@@ -18,10 +18,10 @@ description: 快速开始
 | Key          | 备注                                                                                           |
 |--------------|----------------------------------------------------------------------------------------------|
 | DATABASE_URL | Postgre 数据库 url，`postgresql://[用户名]:[密码]@[地址和端口]/[数据库]`，如：`postgresql://postgres:666666@aws-0-ap-northeast-1.pooler.supabase.com:6543/postgres` |
-| AUTH_SECRET  | 权限机密，你可以执行 npx auth secret 生成一个，反正是随机的字符串就行                                                  |
+| BETTER_AUTH_SECRET  | 权限机密，你可以执行 npx auth secret 生成一个，反正是随机的字符串就行                                                  |
 
 <Callout title="非常重要" type="error">
-  默认账号：`admin@qq.com`，默认密码：`666666`，**登录后请先去设置里面修改密码！**
+  升级至 v2.6.0，以及新部署的用户，在部署完毕后，自行注册用户即可！
 </Callout>
 
 <Callout title="注意事项">
@@ -40,7 +40,7 @@ description: 快速开始
 docker run -d --name picimpact \
   -p 3000:3000 \
   -e DATABASE_URL="postgresql://[用户名]:[密码]@[地址和端口]/[数据库]" \
-  -e AUTH_SECRET="自己运行npx auth secret或一串随机的字符串都行" \
+  -e BETTER_AUTH_SECRET="自己运行npx auth secret或一串随机的字符串都行" \
   besscroft/picimpact:latest
 ```
 

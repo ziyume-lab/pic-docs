@@ -4,15 +4,15 @@ title: 数据库
 
 数据库部分是用的 `postgresql` 数据库，下面是项目用到的表结构：
 
-## auth.js
+## better-auth
 
-auth.js 部分的表，是 [Auth.js](https://authjs.dev/getting-started/adapters/prisma?framework=next-js) 库所需要依赖的表。
+better-auth 部分的表，是 [better-auth](https://www.better-auth.com/) 库所需要依赖的表。
 
-其中包含了：`users`、`accounts`、`sessions`、`verification_tokens` 四张表。
+其中包含了：`user`、`account`、`session`、`verification` 、`two_factor` 五张表。
 
 ## prisma
 
-`_prisma_migrations` 表是 prisma 进行 migrate 需要的表，建议不要擅自修改！
+`_prisma_migrations` 表是 prisma 进行 migrate 需要的表，请不要擅自修改！
 
 ## 系统业务表
 
