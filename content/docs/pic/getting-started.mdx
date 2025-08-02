@@ -42,6 +42,7 @@ description: 快速开始
 docker run -d --name picimpact \
   -p 3000:3000 \
   -e DATABASE_URL="postgresql://[用户名]:[密码]@[地址和端口]/[数据库]" \
+  -e DIRECT_URL="postgresql://[用户名]:[密码]@[地址和端口]/[数据库]" \
   -e BETTER_AUTH_SECRET="自己运行npx auth secret或一串随机的字符串都行" \
   besscroft/picimpact:latest
 ```
