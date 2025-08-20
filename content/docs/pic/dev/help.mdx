@@ -1,0 +1,75 @@
+---
+title: 常见问题
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+这里收集了大家部署和使用时经常遇到的问题，便于排查问题。
+
+<Accordions type="multiple">
+  <Accordion title="docker compose 部署失败 PrismaClientInitializationError" id="1">
+    尝试删除环境变量的 `"` 符号
+
+    详见：
+
+    https://github.com/besscroft/PicImpact/issues/25
+  </Accordion>
+  <Accordion title="使用 alist api 做存储时，报错 SyntaxError: Unexpected token < in JSON at position 0" id="2">
+    alist_url 多了一个 `/` 只能是 `https://alist.example.com` 不能是 `https://alist.example.com/`
+
+    详见：
+    
+    https://github.com/besscroft/PicImpact/issues/51
+  </Accordion>
+  <Accordion title="使用 docker 无法传输大文件" id="3">
+    尝试在 `nginx.conf` 里配置 `client_max_body_size` 参数
+
+    详见：
+    
+    https://github.com/besscroft/PicImpact/issues/125
+  </Accordion>
+  <Accordion title="移动端无法正常显示图片" id="4">
+    可能是 safari 的原因...
+
+    详见：
+
+    https://github.com/besscroft/PicImpact/issues/161
+  </Accordion>
+  <Accordion title="ERROR: function json_agg(json) does not exist" id="5">
+    数据库版本过低，不支持相关函数
+
+    详见：
+
+    https://github.com/besscroft/PicImpact/issues/168
+  </Accordion>
+  <Accordion title="无法正常下载文件" id="6">
+    请检查您的存储端跨域配置，以及允许访问 IP 设置
+
+    详见：
+
+    https://github.com/besscroft/PicImpact/issues/213
+  </Accordion>
+  <Accordion title="Please make sure your database server is running at" id="7">
+    请检查您的服务端是否能正确连接到数据库，主要是网络问题，也可能是链接配置错误
+
+    详见：
+
+    https://github.com/besscroft/PicImpact/issues/199
+  </Accordion>
+  <Accordion title="图片无法正常加载的问题" id="8">
+    主要是存储端跨域设置，以及 IP 和访问策略配置导致的
+
+    详见：
+    
+    https://github.com/besscroft/PicImpact/issues/184
+
+    https://github.com/besscroft/PicImpact/issues/253
+  </Accordion>
+  <Accordion title="图片上传失败" id="9">
+    主要是存储端跨域设置，以及 IP 和访问策略配置导致的
+
+    详见：
+    
+    https://github.com/besscroft/PicImpact/issues/352
+  </Accordion>
+</Accordions>
